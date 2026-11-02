@@ -12,6 +12,50 @@
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     #app { position: fixed; inset: 0; }
+    #compare {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50%;
+      border-left: 3px solid #fff;
+      box-shadow: -6px 0 20px rgba(0,0,0,0.35);
+      display: none;
+      overflow: hidden;
+    }
+    #compare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+    }
+    #compare .label {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+    #toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 20;
+      border: 0;
+      background: rgba(255,255,255,0.9);
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
+    #toggle:hover { background: #fff; }
     #overlay {
       position: fixed;
       top: 16px;
@@ -39,6 +83,11 @@
 </head>
 <body>
   <div id="app"></div>
+  <div id="compare">
+    <img src="./assets/reference.jpg" alt="Referencebillede af huset" />
+    <span class="label">Referencebillede</span>
+  </div>
+  <button id="toggle">Sammenlign med billede</button>
   <div id="overlay">
     <h1>Murstenshus i 3D</h1>
     <p>Træk for at dreje rundt &middot; scroll for zoom &middot; højreklik for at panorere</p>
